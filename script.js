@@ -32,6 +32,7 @@ function toggleWindow(windowId, frameId) {
         windowElement.classList.add('windowhidden');
         frameElement.classList.remove('frameshown');
         frameElement.classList.add('framehidden');
+        windowElement.src = windowElement.src;
     }
 }
 
