@@ -2,8 +2,8 @@ function updateTime() {
     const datetimeElement = document.getElementById('datetime');
     const now = new Date();
     
-    // Format date
-    const optionsDate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    // Format date in mm/dd/yyyy format
+    const optionsDate = { month: '2-digit', day: '2-digit', year: 'numeric' };
     const dateString = now.toLocaleDateString('en-US', optionsDate);
 
     // Format time
