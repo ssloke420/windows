@@ -97,3 +97,9 @@ button {
 .window {
     position: absolute;
 }
+#datetime {
+    float: right;
+    margin-right: 10px;
+    font-size: 14px;
+    color: white;
+}
