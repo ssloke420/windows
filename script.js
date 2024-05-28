@@ -32,7 +32,9 @@ function toggleWindow(windowId, frameId) {
         windowElement.classList.add('windowhidden');
         frameElement.classList.remove('frameshown');
         frameElement.classList.add('framehidden');
-        windowElement.src = windowElement.src;
+    }
+    if (windowElement.id =="gwindow") {
+        windowElement.src = "https://www.google.com/search?igu=1";
     }
 }
 
