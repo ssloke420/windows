@@ -1,9 +1,19 @@
 function updateTime() {
     const datetimeElement = document.getElementById('datetime');
     const now = new Date();
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
-    const dateTimeString = now.toLocaleDateString('en-US', options);
-    datetimeElement.textContent = dateTimeString;
+    
+    // Format date
+    const optionsDate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateString = now.toLocaleDateString('en-US', optionsDate);
+
+    // Format time
+    const optionsTime = { hour: '2-digit', minute: '2-digit', hour12: false };
+    const timeString = now.toLocaleTimeString('en-US', optionsTime);
+
+    // Combine date and time with a line break
+    const dateTimeString = `${timeString}<br>${dateString}`;
+
+    datetimeElement.innerHTML = dateTimeString;
 }
 
 // Update time every second
