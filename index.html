@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title> Windows OS </title>
+<link rel="stylesheet" href="style.css"/>
+<meta charset="utf-8"/>
+</head>
+<body>
+<!--         <script>
+
+            var time, h, m, s, track;
+            track = 0;
+            window.onload = function() { setInterval( timeNow, 100); }
+
+            function timeNow() {
+
+              time = new Date();
+              // track += 1;
+              h = time.getHours();
+              m = time.getMinutes();
+              s = time.getSeconds();
+              if ( s < 10 ) { s = "0" + s; } /* we add a 0 in front of s, when it is lower than 10, because that's what most clocks display, this is for the human user rather than for any need by the computer */
+              document.getElementById("time").innerHTML = h + ':' + m + ':' + s;
+              // document.getElementById("track").innerHTML = track;
+
+            }
+
+        </script> -->
+<script src="script.js"></script>
+<div id="googleframe" class="window">
+<div class="framehidden" id="googleframeheader">
+    <span class="control-box">
+    <button class="controls" onclick="toggleWindow('gwindow', 'googleframeheader')"> - </button>
+    <button class="controls" onclick="fullscreen('googleframe')"> ❐ </button>
+    <button class="controls" id="close" onclick="toggleWindow('gwindow', 'googleframeheader')"> X </button>
+    </span>
+</div>
+<iframe src="https://www.google.com/search?igu=1" id = "gwindow" class="windowhidden"></iframe>
+</div>
+<!---Notepad-->
+<div id="padframe" class="window">
+<div class="framehidden" id="padframeheader">
+    <span class="control-box">
+        <button class="controls" onclick="toggleWindow('padwindow', 'padframeheader')"> - </button>
+        <button class="controls" onclick="fullscreen('padframe')" disabled> ❐ </button>
+        <button class="controls" id="close" onclick="toggleWindow('padwindow', 'padframeheader')"> X </button>
+    </span>
+</div>
+<textarea id="padwindow" rows="45" cols="150" class="windowhidden"></textarea>
+</div>
+<!---VSCode--->
+<!-- <div id="vsframe">
+<div class="framehidden" id="vframe">
+    <span class="control-box">
+    <button class="controls" onclick="toggleWindow('vwindow', 'vframe')"> - </button>
+    <button class="controls" onclick="fullscreen('vsframe')"> ❐ </button>
+    <button class="controls" id="close" onclick="toggleWindow('vwindow', 'vframe')"> X </button>
+    </span>
+</div>
+<iframe src="https://replit.com/~" id = "vwindow" class="windowhidden"></iframe>
+</div> -->
+<div class="taskbar">
+    <img src="start.png"/>
+    <input type="text" id="search" placeholder="🔍Type here to search"/>
+    <button onclick="toggleWindow('gwindow', 'googleframeheader')"> <img src="chrome.png"/> </button>
+    <button onclick="toggleWindow('padwindow', 'padframeheader')"><img src="notepad.png"/></button>
+    <button><img src="https://logodownload.org/wp-content/uploads/2022/07/microsoft-store-logo-1.png"/></button>
+<!--     <p id="time">~Waiting for time update.</p> -->
+
+<!--     <button onclick="toggleWindow('vwindow', 'vframe')"><img src="vscode.png" alt="vs"</button> -->
+</div>
+<script src="drag.js"></script>
+</body>
+</html>
