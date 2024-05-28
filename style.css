@@ -98,10 +98,8 @@ button {
     position: absolute;
 }
 #datetime {
-    position: absolute;
     text-align: right;
     margin-right: 10px;
     font-size: 14px;
     right: 0;
-    bottom: 1;
 }
