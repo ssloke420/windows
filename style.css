@@ -17,7 +17,7 @@ body {
     left:0;
     padding-bottom: 0px;
     float: left;
-    display: none;
+    display: flex;
     height: 38px;
     overflow:hidden; 
 }
