@@ -7,7 +7,52 @@
 <meta charset="utf-8"/>
 </head>
 <body>
+                <script>
+                    var url = document.getElementById("search");
+                    var web = document.getElementById("gwindow");
+                    var frame = document.getElementById("googleframeheader");
+                    document.addEventListener("keypress", function (event) {
+                        // event.preventDefault();
+                        if (event.keyCode === 13) {
+                            // var x = url.value;
+                            if (url.value[0] == "h") {
+                                if (url.value[1] == "t") {
+                                    if(url.value[2] == "t"){
+                                        if(url.value[3] == "p"){
+                                            if(url.value[4] == "s"){
+                                                if (url.value[5] == ":"){
+                                                    web.src = url.value;
+                                                } else {
+                                                    url.value = "https://www.google.com/search?igu=1&q="+url.value+"&safe=active&ssui=on&surl=1";
+                                                }
+                                            } else {
+                                                url.value = "https://www.google.com/search?igu=1&q="+url.value+"&safe=active&ssui=on&surl=1";
+                                            }
+                                        } else {
+                                            url.value = "https://www.google.com/search?igu=1&q="+url.value+"&safe=active&ssui=on&surl=1";
+                                        }
+                                    } else {
+                                        url.value = "https://www.google.com/search?igu=1&q="+url.value+"&safe=active&ssui=on&surl=1";
+                                    }
+                                } else {
+                                    url.value = "https://www.google.com/search?igu=1&q="+url.value+"&safe=active&ssui=on&surl=1"
+                                }
+                            } else {
+                                url.value = "https://www.google.com/search?igu=1&q="+url.value+"&safe=active&ssui=on&surl=1";
+                            }
+                            if (url.value === "https://google.com") {url.value = "https://google.com?igu=1"} else {if (url.value === "https://www.google.com") {x = "https://www.google.com?igu=1"}}
+                            // alert(url.value);
+                            // web.contentWindow.document.location.href = url.value;
+                            // frame.classList.add("one");
+                            web.src = url.value;
+                            web.classList.remove('windowhidden');
+                            web.classList.add('windowshown');
+                            frame.classList.remove('framehidden');
+                            frame.classList.add('frameshown');
 
+                        }
+                    });
+                </script>
 <script src="script.js"></script>
 <div id="googleframe" class="window">
 <div class="framehidden" id="googleframeheader">
