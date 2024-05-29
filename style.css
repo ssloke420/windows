@@ -107,3 +107,7 @@ button {
     right: 0;
 }
  */
+.tray {
+    text-align: right;
+    text-color: white;
+}
