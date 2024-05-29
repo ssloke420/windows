@@ -42,14 +42,15 @@ function toggleWindow(windowId, frameId) {
 function fullscreen(id) {
     const windowElement = document.getElementById(id);
     const iframe = windowElement.querySelector('iframe');
+    const taskbar = document.getElementById("taskbar");
     
     if (windowElement.classList.contains('fullscreen')) {
         windowElement.classList.remove('fullscreen');
         iframe.classList.remove('fullscreen');
-        $('#taskbar').show();
+        taskbar.style.display = "flex";
     } else {
         windowElement.classList.add('fullscreen');
         iframe.classList.add('fullscreen');
-        $('#taskbar').hide();
+        taskbar.style.display = "none";
     }
 }
