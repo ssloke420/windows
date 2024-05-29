@@ -46,8 +46,10 @@ function fullscreen(id) {
     if (windowElement.classList.contains('fullscreen')) {
         windowElement.classList.remove('fullscreen');
         iframe.classList.remove('fullscreen');
+        $('#taskbar').show();
     } else {
         windowElement.classList.add('fullscreen');
         iframe.classList.add('fullscreen');
+        $('#taskbar').hide();
     }
 }
