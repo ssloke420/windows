@@ -97,6 +97,9 @@ button {
 .window {
     position: absolute;
 }
+#setwindow {
+    background-color: white;
+}
 /* #datetime {
     text-align: right;
     margin-right: 0px;
