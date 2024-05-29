@@ -1,4 +1,5 @@
 function toggleWindow(windowId, frameId) {
+    console.log("function toggleWindow called");
     const allWindows = document.querySelectorAll('iframe, textarea');
     const allFrames = document.querySelectorAll('.framehidden, .frameshown');
 
