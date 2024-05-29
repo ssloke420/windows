@@ -3,7 +3,7 @@ $(document).ready(function() {
         var confirmation = confirm("Are you sure you want to shutdown?");
         if (confirmation) {
             $('body').css('background-image', 'none').empty();
-            $('body').css('background-color', 'black');
+            $('html').css('background-color', 'black');
         }
     });
     $('.frameshown').dblclick(function() {
