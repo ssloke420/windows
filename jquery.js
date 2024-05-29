@@ -5,7 +5,7 @@ $(document).ready(function() {
             $('body').css('background-image', 'none').empty();
             $('body').css('background-color', 'black');
         }
-    }
+    });
     $('.frameshown').dblclick(function() {
         var id = $(this).attr('id'); // Get the id of the element
         fullscreen(id); // Call the suprem function with the id as parameter
