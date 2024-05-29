@@ -47,6 +47,8 @@
             var password, screen, lock;
             password = document.getElementById("pass");
             screen = document.getElementById("login");
+            tb = document.getElementById('taskbar');
+            
             // lock = document.getElementById("appleLogo");
             // var t, y, n, h, a, i, d, u, e, s, b, q;
             // q = "h"; b = "e"; s = "m"; e = " "; u = "d"; d = "r"; i = "n"; a = "r"; h = " "; n = "p"; y = "q"; t = "m";
@@ -58,6 +60,7 @@
                         if (password.value === passCode) {
                             // alert("die");
                             screen.style.display = "none";
+                            tb.style.display = "flex";
                         } else {
                             password.value = "";
                         }
