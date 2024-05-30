@@ -2,6 +2,8 @@
 
 dragElement(document.getElementById("googleframe"));
 dragElement(document.getElementById("padframe"));
+dragElement(document.getElementById("setframe"));
+dragElement(document.getElementById("tframe"));
 
 function dragElement(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
