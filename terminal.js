@@ -12,6 +12,9 @@
             output.innerHTML = "Justin will now be deployed in the system files after a glass of coffee.";
           } else if (val == "brain") {
             output.innerHTML = "Skbidi Toilet Gang Mode Activated";
+          } else if (val == "date" || val == "time" || val == "datetime") {
+            date = new Date();
+            output.innerHTML = date;
           } else {
             output.innerHTML = "ERROR: Unknown Command";
           }
