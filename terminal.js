@@ -1,6 +1,6 @@
       let output = document.getElementById("output");
       let input = document.getElementById("input");
-      let handleCommands = () => {
+      let handleCommands = (event) => {
         if (event.keyCode == 13) {
           output.innerHTML = ""
           let val = input.value;
