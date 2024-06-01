@@ -7,9 +7,9 @@ function toggleWindow(windowId, frameId) {
         if (win.id !== windowId) {
             win.classList.remove('windowshown');
             win.classList.add('windowhidden');
-            if (windowId == "gwindow") {
-                win.src = "https://www.google.com/search?igu=1";
-            }
+            // if (windowId == "gwindow") {
+            //     win.src = "https://www.google.com/search?igu=1";
+            // }
         }
     });
 
@@ -34,9 +34,9 @@ function toggleWindow(windowId, frameId) {
         frameElement.classList.remove('frameshown');
         frameElement.classList.add('framehidden');
     }
-    if (windowElement.id =="gwindow") {
-        windowElement.src = "https://www.google.com/search?igu=1";
-    }
+    // if (windowElement.id =="gwindow") {
+    //     windowElement.src = "https://www.google.com/search?igu=1";
+    // }
 }
 
 
