@@ -58,7 +58,7 @@ function fullscreen(id) {
 document.addEventListener("keydown", function (event) {
     if (event.ctrlKey && event.key === 'l') {
         event.preventDefault(); // Prevent the default action if needed
-        location.replace(location.href);
+        location.href = location.href;
     }
 });
 
