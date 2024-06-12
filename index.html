@@ -4,7 +4,6 @@
 <title> Windows OS </title>
 <link rel="stylesheet" href="style.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script type="module" src="https://unpkg.com/x-frame-bypass"></script>
 <meta charset="utf-8"/>
 </head>
 <body>
@@ -122,7 +121,7 @@ if (storedPass) {
     <button class="controls" id="close" onclick="toggleWindow('gwindow', 'googleframeheader')"> X </button>
     </span>
 </div>
-<iframe is="x-frame-bypass" src="https://www.google.com/search?igu=1" id = "gwindow" class="windowhidden"></iframe>
+<iframe src="https://www.google.com/search?igu=1" id = "gwindow" class="windowhidden"></iframe>
 </div>
 <!---Notepad-->
 <div id="padframe" class="window">
