@@ -12,8 +12,6 @@ html, body {
 body {
     background-image: url('https://tse3.mm.bing.net/th?id=OIP.DtKV96tH6lok3RTS4D_kLgHaEK&pid=Api&P=0&h=220');
     background-size: cover;
-    font-family: Arial, sans-serif;
-    color: white;
     overflow: hidden; /* Prevent scrolling */
 }
 
@@ -87,7 +85,6 @@ body {
     border-radius: 5px;
     border: none;
     outline: none;
-    font-size: 14px;
     background-color: rgba(255, 255, 255, 0.2);
     color: white;
 }
@@ -149,4 +146,3 @@ body {
 #battery {
     margin-right: 10px;
 }
-/* cheese and cookies */
