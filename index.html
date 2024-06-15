@@ -8,6 +8,73 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
+    <script>
+            var password = document.getElementById("pass");
+        var screen = document.getElementById("login");
+        var tb = document.getElementById('taskbar');
+        var passCode = "sproistotallyforthewin";
+
+        function checkCookies() {
+            let cookies = document.cookie.split(';');
+            let passwordIs = false;
+            let passCodeFromCookie = '';
+
+            for (let i = 0; i < cookies.length; i++) {
+                let cookie = cookies[i].trim();
+                if (cookie.startsWith("password=")) {
+                    passwordIs = true;
+                    passCodeFromCookie = cookie.substring("password=".length);
+                    break;
+                }
+            }
+
+            if (!passwordIs) {
+                setCookies();
+                return false;
+            }
+            return passCodeFromCookie;
+        }
+
+        function setCookies() {
+            document.getElementById("cookie").innerHTML = "Please set a password.";
+            password.addEventListener("keypress", function (event) {
+                if (event.key === "Enter") {
+                    let savedPassword = password.value;
+                    let confirmation = confirm("Are you sure you want to save this password? " + savedPassword);
+                    if (confirmation) {
+                        document.cookie = `password=${savedPassword}; path=/;`;
+                        screen.style.display = "none";
+                        password.value = "";
+                        lockComplete();
+                    }
+                }
+            }); // Ensure the event listener runs only once
+        }
+
+        function lockComplete() {
+            password.addEventListener("keypress", function (event) {
+                if (event.key === "Enter") {
+                    if (password.value === passCode || password.value === checkCookies()) {
+                        screen.style.display = "none";
+                        tb.style.display = "block";
+                    } else {
+                        document.getElementById("cookie").innerHTML = "Incorrect password. Please try again.";
+                        password.value = "";
+                    }
+                }
+            });
+        }
+
+        function lockOpen() {
+            screen.style.display = "block";
+            password.value = "";
+        }
+
+        let storedPass = checkCookies();
+        if (storedPass) {
+            lockComplete();
+        }
+    </script>     
     <div id="completeWrapper">
         <div id="login">
             <div class="backDD">
