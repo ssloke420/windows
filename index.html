@@ -172,11 +172,15 @@
             <button><img src="mail.png" /></button>
             <button onclick="toggleWindow('setwindow', 'setframeheader')"><img src="settings.png" /></button>
             <button onclick="toggleWindow('twindow', 'tframeheader')"><img src="https://icon-library.com/images/command-prompt-icon/command-prompt-icon-22.jpg" /></button>
-            <div class="tray">
-                <img id="wifi-icon" src="wifi.png" />
-                <span id="battery"></span>
-                <span id="datetime"></span>
+        <div class="tray">
+            <img id="wifi-icon" src="wifi.png" />
+            <span id="battery"></span>
+            <div id="datetime-container">
+                <div id="time"></div>
+                <div id="date"></div>
             </div>
+        </div>
+
         </div>
         <script src="drag.js"></script>
         <script src="jquery.js"></script>
