@@ -1,23 +1,25 @@
-function updateTime() {
-    const datetimeElement = document.getElementById('datetime');
+function updateDateTime() {
     const now = new Date();
-    
-    // Format date in mm/dd/yyyy format
-    const optionsDate = { month: '2-digit', day: '2-digit', year: 'numeric' };
-    const dateString = now.toLocaleDateString('en-US', optionsDate);
+    const timeOptions = {
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true
+    };
+    const dateOptions = {
+        month: '2-digit',
+        day: '2-digit',
+        year: 'numeric'
+    };
 
-    // Format time
-    const optionsTime = { hour: '2-digit', minute: '2-digit', hour12: false };
-    const timeString = now.toLocaleTimeString('en-US', optionsTime);
+    const formattedTime = now.toLocaleTimeString('en-US', timeOptions);
+    const formattedDate = now.toLocaleDateString('en-US', dateOptions);
 
-    // Combine date and time with a line break
-    const dateTimeString = `${timeString}<br>${dateString}`;
-
-    datetimeElement.innerHTML = dateTimeString;
+    document.getElementById('time').innerText = formattedTime;
+    document.getElementById('date').innerText = formattedDate;
 }
 
-// Update time every second
-setInterval(updateTime, 1000);
+// Initial update
+updateDateTime();
 
-// Initial call to display time immediately
-updateTime();
+// Update date and time every second
+setInterval(updateDateTime, 1000);
