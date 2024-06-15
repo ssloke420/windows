@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title> Windows OS </title>
-<link rel="stylesheet" href="style.css"/>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<meta charset="utf-8"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows OS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
     <div id="completeWrapper">
@@ -17,99 +18,27 @@
                 </center>
             </div>
         </div>
-        <style>
-            .backDD {
-                background: rgba(0, 0, 0, 0.5);
-                color: white;
-                width: 60%;
-                margin-left: 20%;
-                height: 40%;
-                margin-top: 10%;
-                padding: 10px;
-                border-radius: 40px;
-            }
-            #p {
-                font-size: 30pt;
-            }
-            #login {
-                position: fixed;
-                top: 0;
-                bottom: 0;
-                right: 0;
-                left: 0;
-                background-size: cover;
-                z-index: 999;
-                display: block;
-            }
-        </style>
-        <script>
-            var password = document.getElementById("pass");
-            var screen = document.getElementById("login");
-            var tb = document.getElementById('taskbar');
-            var passCode = "sproistotallyforthewin";
 
-            function checkCookies() {
-                let cookies = document.cookie.split(';');
-                let passwordIs = false;
-                let passCodeFromCookie = '';
+        <div class="taskbar" id="taskbar">
+            <img src="start.png" id="start"/>
+            <input type="text" id="search" placeholder="🔍Type here to search"/>
+            <button onclick="toggleWindow('gwindow', 'googleframeheader')"> <img src="chrome.png"/> </button>
+            <button onclick="toggleWindow('padwindow', 'padframeheader')"><img src="notepad.png"/></button>
+            <button><img src="https://logodownload.org/wp-content/uploads/2022/07/microsoft-store-logo-1.png"/></button>
+            <button><img src="https://vectorified.com/images/file-explorer-icon-windows-10-38.png"/></button>
+            <button><img src="mail.png"/></button>
+            <button onclick="toggleWindow('setwindow', 'setframeheader')"><img src="settings.png"/></button>
+            <button onclick="toggleWindow('twindow', 'tframeheader')"><img src="https://icon-library.com/images/command-prompt-icon/command-prompt-icon-22.jpg"/></button>
 
-                for (let i = 0; i < cookies.length; i++) {
-                    let cookie = cookies[i].trim();
-                    if (cookie.startsWith("password=")) {
-                        passwordIs = true;
-                        passCodeFromCookie = cookie.substring("password=".length);
-                        break;
-                    }
-                }
+            <div class="tray">
+                <div id="datetime-container">
+                    <div id="time"></div>
+                    <div id="date"></div>
+                </div>
+                <div id="battery"></div>
+            </div>
+        </div>
 
-                if (!passwordIs) {
-                    setCookies();
-                    return false;
-                }
-                return passCodeFromCookie;
-            }
-
-            function setCookies() {
-                document.getElementById("cookie").innerHTML = "Please set a password.";
-                password.addEventListener("keypress", function (event) {
-                    if (event.key === "Enter") {
-                        let savedPassword = password.value;
-                        let confirmation = confirm("Are you sure you want to save this password? " + savedPassword);
-                        if (confirmation) {
-                            document.cookie = `password=${savedPassword}; path=/;`;
-                            screen.style.display = "none";
-                            password.value = "";
-                            lockComplete();
-                        }
-                    }
-                });
-            }
-
-            function lockComplete() {
-                password.addEventListener("keypress", function (event) {
-                    if (event.key === "Enter") {
-                        if (password.value === passCode || password.value === checkCookies()) {
-                            screen.style.display = "none";
-                            tb.style.display = "block";
-                        } else {
-                            document.getElementById("cookie").innerHTML = "Incorrect password. Please try again.";
-                            password.value = "";
-                        }
-                    }
-                });
-            }
-
-            function lockOpen() {
-                screen.style.display = "block";
-                password.value = "";
-            }
-
-            let storedPass = checkCookies();
-            if (storedPass) {
-                lockComplete();
-            }
-        </script>
-        <script src="script.js"></script>
         <div id="googleframe" class="window">
             <div class="framehidden" id="googleframeheader">
                 <span class="control-box">
@@ -120,6 +49,7 @@
             </div>
             <iframe src="https://www.google.com/search?igu=1" id="gwindow" class="windowhidden"></iframe>
         </div>
+
         <!---Notepad-->
         <div id="padframe" class="window">
             <div class="framehidden" id="padframeheader">
@@ -131,6 +61,7 @@
             </div>
             <textarea id="padwindow" rows="45" cols="150" class="windowhidden"></textarea>
         </div>
+
         <!---Settings--->
         <div id="setframe" class="window">
             <div class="framehidden" id="setframeheader">
@@ -143,14 +74,15 @@
             <div id="setwindow" class="windowhidden">
                 <h1>Windows OS Simulator by <a href="https://github.com/ssloke420">Shlok Shah</a></h1>
                 <h3>Tips and tricks</h3>
-                <p>Use the start icon to shut down the page. <br />
-                    Use Chrome to browse the web. However, not all sites will work. <br />
-                    Use Notepad to take notes. <br />
-                    Terminal can be used to run commands. Can you find them all? <br />
+                <p>Use the start icon to shut down the page. <br/>
+                    Use Chrome to browse the web. However, not all sites will work. <br/>
+                    Use Notepad to take notes. <br/>
+                    Terminal can be used to run commands. Can you find them all? <br/>
                     And that's it! Any new updates will be posted here, so check regularly.
                 </p>
             </div>
         </div>
+
         <!--Terminal--->
         <div id="tframe" class="window">
             <div class="framehidden" id="tframeheader">
@@ -162,30 +94,11 @@
             </div>
             <iframe src="terminal.html" id="twindow" class="windowhidden"></iframe>
         </div>
-        <div class="taskbar" id="taskbar">
-            <img src="start.png" id="start" />
-            <input type="text" id="search" placeholder="🔍Type here to search" />
-            <button onclick="toggleWindow('gwindow', 'googleframeheader')"> <img src="chrome.png" /> </button>
-            <button onclick="toggleWindow('padwindow', 'padframeheader')"><img src="notepad.png" /></button>
-            <button><img src="https://logodownload.org/wp-content/uploads/2022/07/microsoft-store-logo-1.png" /></button>
-            <button><img src="https://vectorified.com/images/file-explorer-icon-windows-10-38.png" /></button>
-            <button><img src="mail.png" /></button>
-            <button onclick="toggleWindow('setwindow', 'setframeheader')"><img src="settings.png" /></button>
-            <button onclick="toggleWindow('twindow', 'tframeheader')"><img src="https://icon-library.com/images/command-prompt-icon/command-prompt-icon-22.jpg" /></button>
-        <div class="tray">
-            <img id="wifi-icon" src="wifi.png" />
-            <span id="battery"></span>
-            <div id="datetime-container">
-                <div id="time"></div>
-                <div id="date"></div>
-            </div>
-        </div>
-
-        </div>
-        <script src="drag.js"></script>
-        <script src="jquery.js"></script>
-        <script src="time.js"></script>
-        <script src="battery.js"></script>
     </div>
+
+    <script src="script.js"></script>
+    <script src="drag.js"></script>
+    <script src="jquery.js"></script>
+    <script src="time.js"></script>
 </body>
 </html>
