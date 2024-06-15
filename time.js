@@ -1,3 +1,15 @@
+// Function to update battery status
+async function updateBattery() {
+    const battery = await navigator.getBattery();
+    document.getElementById('battery').innerText = `Battery: ${Math.round(battery.level * 100)}%`;
+
+    // Update battery status on change
+    battery.onlevelchange = () => {
+        document.getElementById('battery').innerText = `Battery: ${Math.round(battery.level * 100)}%`;
+    };
+}
+
+// Function to update date and time
 function updateDateTime() {
     const now = new Date();
     const timeOptions = {
@@ -19,9 +31,8 @@ function updateDateTime() {
 }
 
 // Initial update
+updateBattery();
 updateDateTime();
 
 // Update date and time every second
 setInterval(updateDateTime, 1000);
-
-//cheese
