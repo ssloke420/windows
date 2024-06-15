@@ -10,16 +10,16 @@ body {
     overflow: hidden;
     color: white;
 }
-.taskbar{
+.taskbar {
     position: absolute;
     width: 100%;
     background-color: black;
     bottom: 0;
-    left:0;
-    padding-bottom: 0px;
+    left: 0;
     display: flex;
     height: 38px;
     align-items: center;
+    padding: 0 10px;
 }
 .taskbar img {
     width: auto;
@@ -40,6 +40,15 @@ button {
     height: 20px;
     margin: 0 5px;
 }
-.tray span {
+.tray #battery {
     margin-left: 10px;
+}
+#datetime-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: 10px;
+    color: white;
+    font-size: 14px;
+    line-height: 1.2;
 }
