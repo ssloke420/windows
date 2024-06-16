@@ -75,6 +75,8 @@ button {
 }
 #search{
     width: 250px;   
+    padding-bottom: 2.5px;
+    padding-top: 2.5px;
 }
 .fullscreen {
     width: 100vw !important;
