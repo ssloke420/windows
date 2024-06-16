@@ -1,83 +1,101 @@
 html {
     width: 100%;
     height: 100%;
-    background-image: url(https://tse3.mm.bing.net/th?id=OIP.DtKV96tH6lok3RTS4D_kLgHaEK&pid=Api&P=0&h=220);
+    background-image: url('https://tse3.mm.bing.net/th?id=OIP.DtKV96tH6lok3RTS4D_kLgHaEK&pid=Api&P=0&h=220');
     background-size: contain;
 }
+
 body {
     height: 100%;
     overflow: hidden;
     color: white;
 }
-.taskbar{
+
+.taskbar {
     position: absolute;
     width: 100%;
     background-color: black;
     bottom: 0;
-    left:0;
-    padding-bottom: 0px;
-    float: left;
+    left: 0;
     display: flex;
-    height: 38px;
-    overflow:hidden; 
+    align-items: center;
+    height: 50px; /* Increased height to fit search bar */
+    padding: 0 10px; /* Added padding for better spacing */
+    overflow: hidden;
 }
-.windowshown {
-    display:block;
-    width: 80vw;
-    height: 60vh;
-    float:center;
-    
-    
-}
-.windowhidden {
-    display:none;
-    width: 80vw;
-    height: 60vh;
-    float:center;
-}
+
 .taskbar img {
     width: auto;
     height: 30px;
     margin: 5px;
 }
+
 button {
     background-color: black;
     border: none;
 }
+
+#search {
+    flex: 1;
+    max-width: 300px;
+    padding: 8px;
+    margin: 0 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.windowshown {
+    display: block;
+    width: 80vw;
+    height: 60vh;
+    float: center;
+}
+
+.windowhidden {
+    display: none;
+    width: 80vw;
+    height: 60vh;
+    float: center;
+}
+
 .frameshown {
     background-color: lightgray;
     width: 80vw;
     height: 35px;
-    float:center;
-    
+    float: center;
 }
+
 .framehidden {
     background-color: lightgray;
     width: 80vw;
     height: 35px;
-    float:center;
-    display:none;
+    float: center;
+    display: none;
 }
+
 .controls {
     width: 30px;
     height: 30px;
     background-color: lightgray;
     border: none;
 }
+
 #close:hover {
     background-color: red;
 }
+
 .control-box {
-    float:right;
+    display: flex;
+    align-items: center;
 }
-.controls:hover{
+
+.controls:hover {
     background-color: gray;
 }
-#search{
-    width: 250px;   
-    padding-bottom: 2.5px;
-    padding-top: 2.5px;
-}
+
 .fullscreen {
     width: 100vw !important;
     height: 100vh !important;
@@ -86,30 +104,30 @@ button {
     border: none !important;
     box-shadow: none !important;
 }
-.fullscreen #googleframeheader{
+
+.fullscreen #googleframeheader {
     width: 100vw !important;
     top: 0 !important;
     left: 0 !important;
     border: none !important;
     box-shadow: none !important;
 }
+
 #time {
     float: right !important;
 }
+
 .window {
     position: absolute;
 }
+
 #setwindow {
     background-color: white;
-} 
-/* #datetime {
-    text-align: right;
-    margin-right: 0px;
-    font-size: 14px;
-    right: 0;
 }
- */
+
 .tray {
-    text-align: right;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
     color: white;
 }
