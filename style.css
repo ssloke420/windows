@@ -77,6 +77,16 @@ button {
     float: center;
     display: none;
 }
+.framehidden, .frameshown {
+    background-color: lightgray;
+    width: 80vw;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
 
 .control-box {
     display: flex;
