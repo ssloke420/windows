@@ -1,95 +1,92 @@
-/* Reset default margin and padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
+html {
+    width: 100%;
     height: 100%;
+    background-image: url(https://tse3.mm.bing.net/th?id=OIP.DtKV96tH6lok3RTS4D_kLgHaEK&pid=Api&P=0&h=220);
+    background-size: contain;
 }
 
 body {
-    background-image: url('https://tse3.mm.bing.net/th?id=OIP.DtKV96tH6lok3RTS4D_kLgHaEK&pid=Api&P=0&h=220');
-    background-size: cover;
-    overflow: hidden; /* Prevent scrolling */
-}
-
-#completeWrapper {
-    width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#login {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
     color: white;
-    width: 60%;
-    max-width: 600px;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-#p {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-#cookie {
-    font-size: 18px;
-}
-
-#pass {
-    width: 80%;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    font-size: 16px;
 }
 
 .taskbar {
     position: absolute;
+    width: 100%;
+    background-color: black;
     bottom: 0;
     left: 0;
-    width: 100%;
-    height: 60px;
-    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
+    height: 38px;
     align-items: center;
-    justify-content: flex-start;
     padding: 0 10px;
 }
 
 .taskbar img {
-    width: 40px;
-    height: 40px;
-    margin: 0 5px;
-    cursor: pointer;
-    background-color: black;
-    padding: 5px;
-    border-radius: 5px;
+    width: auto;
+    height: 30px;
+    margin: 5px;
 }
 
-#search {
-    flex: 1;
-    max-width: 300px;
-    padding: 8px;
-    margin: 0 10px;
-    border-radius: 5px;
+button {
+    background-color: black;
     border: none;
-    outline: none;
-    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.tray {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.tray img {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+}
+
+.tray #battery {
+    margin-left: 10px;
+}
+
+#datetime-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: 10px;
     color: white;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.windowshown {
+    display: block;
+    width: 80vw;
+    height: 60vh;
+    float: center;
+}
+
+.windowhidden {
+    display: none;
+    width: 80vw;
+    height: 60vh;
+    float: center;
+}
+
+.frameshown {
+    background-color: lightgray;
+    width: 80vw;
+    height: 35px;
+    float: center;
+}
+
+.framehidden {
+    background-color: lightgray;
+    width: 80vw;
+    height: 35px;
+    float: center;
+    display: none;
 }
 
 .controls {
@@ -97,34 +94,22 @@ body {
     height: 30px;
     background-color: lightgray;
     border: none;
-    margin-right: 5px;
-    cursor: pointer;
+}
+
+#close:hover {
+    background-color: red;
+}
+
+.control-box {
+    float: right;
 }
 
 .controls:hover {
     background-color: gray;
 }
 
-.control-box {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    height: 100%;
-}
-
-.window {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-    display: none;
-}
-
-.framehidden {
-    display: none;
+#search {
+    width: 250px;   
 }
 
 .fullscreen {
@@ -136,16 +121,18 @@ body {
     box-shadow: none !important;
 }
 
-#datetime-container {
-    display: flex;
-    align-items: center;
-    margin-right: 10px;
+.fullscreen #googleframeheader {
+    width: 100vw !important;
+    top: 0 !important;
+    left: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
-#time, #date {
-    margin-right: 10px;
+.window {
+    position: absolute;
 }
 
-#battery {
-    margin-right: 10px;
+#setwindow {
+    background-color: white;
 }
