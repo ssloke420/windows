@@ -89,7 +89,7 @@ button {
 }
 
 .control-box {
-    display: flex;
+    display: block;
     align-items: center;
     float: right;
 }
