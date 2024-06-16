@@ -79,9 +79,7 @@ button {
 
 .control-box {
     display: flex;
-    position: absolute;
     align-items: center;
-    right: 0;
     /* Remove float: right; */
 }
 
