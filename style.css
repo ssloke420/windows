@@ -48,36 +48,21 @@ button {
     bottom: 5px;
 }
 
-.windowshown {
-    display: block;
+.windowshown, .windowhidden {
     width: 80vw;
     height: 60vh;
-    float: center;
+    margin: 0 auto; /* Center the window horizontally */
+}
+
+.windowshown {
+    display: block;
 }
 
 .windowhidden {
     display: none;
-    width: 80vw;
-    height: 60vh;
-    float: center;
 }
 
-.frameshown {
-    background-color: lightgray;
-    width: 80vw;
-    height: 35px;
-    float: center;
-    justify-content: space-between;
-}
-
-.framehidden {
-    background-color: lightgray;
-    width: 80vw;
-    height: 35px;
-    float: center;
-    display: none;
-}
-.framehidden, .frameshown {
+.frameshown, .framehidden {
     background-color: lightgray;
     width: 80vw;
     height: 35px;
@@ -85,16 +70,19 @@ button {
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
+    margin: 0 auto; /* Center the frame horizontally */
 }
 
+.framehidden {
+    display: none;
+}
 
 .control-box {
     display: flex;
     align-items: center;
-    /* Removed float: right; */
+    /* Remove float: right; */
 }
 
-/* Adjust the controls inside the control box */
 .controls {
     width: 30px;
     height: 30px;
