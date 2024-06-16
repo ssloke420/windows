@@ -45,6 +45,7 @@ button {
     outline: none;
     background-color: rgba(255, 255, 255, 0.2);
     color: white;
+    bottom: 5px;
 }
 
 .windowshown {
