@@ -67,6 +67,7 @@ button {
     width: 80vw;
     height: 35px;
     float: center;
+    justify-content: space-between;
 }
 
 .framehidden {
@@ -77,21 +78,23 @@ button {
     display: none;
 }
 
+.control-box {
+    display: flex;
+    align-items: center;
+    /* Removed float: right; */
+}
+
+/* Adjust the controls inside the control box */
 .controls {
     width: 30px;
     height: 30px;
     background-color: lightgray;
     border: none;
+    margin-left: 5px; /* Added margin for spacing */
 }
 
 #close:hover {
     background-color: red;
-}
-
-.control-box {
-    display: block;
-    align-items: center;
-    float: right;
 }
 
 .controls:hover {
