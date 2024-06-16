@@ -80,6 +80,8 @@ button {
 .control-box {
     display: flex;
     align-items: center;
+    text-align: right;
+    float: right;
     /* Remove float: right; */
 }
 
