@@ -29,12 +29,13 @@ body {
     display: flex;
     align-items: center;
     color: white;
+    padding-right: 10px; /* Added padding to the right */
 }
 
 .tray img {
     width: 20px;
     height: auto;
-    margin: 0 10px;
+    margin: 0 10px; /* Adjusted margin for better spacing */
 }
 
 #battery {
@@ -44,7 +45,9 @@ body {
 #time {
     margin: 0 10px;
     white-space: nowrap; /* Prevents date and time from wrapping */
+    text-align: right;   /* Aligns text to the right */
 }
+
 
 .taskbar img {
     width: auto;
