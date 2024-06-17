@@ -81,6 +81,7 @@ button {
 
 .control-box {
     float: right;
+    padding: none;
     /* Remove float: right; */
 }
 
