@@ -24,6 +24,28 @@ body {
     overflow: hidden;
 }
 
+.tray {
+    margin-left: auto; /* Aligns the tray to the right */
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.tray img {
+    width: 20px;
+    height: auto;
+    margin: 0 10px;
+}
+
+#battery {
+    margin: 0 10px;
+}
+
+#time {
+    margin: 0 10px;
+    white-space: nowrap; /* Prevents date and time from wrapping */
+}
+
 .taskbar img {
     width: auto;
     height: 30px;
@@ -129,9 +151,3 @@ button {
     background-color: white;
 }
 
-.tray {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    color: white;
-}
