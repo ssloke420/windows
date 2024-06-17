@@ -158,6 +158,8 @@ button {
     position: fixed;
     top: 3px;
     left: 3px;
+    width: 80px;
+    height: auto;
 }
 /* buggy */
 
