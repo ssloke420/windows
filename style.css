@@ -44,8 +44,9 @@ button {
     border: none;
     outline: none;
     background-color: rgba(255, 255, 255, 0.2);
-    color: white;
+    color: black;
     bottom: 5px;
+    background-color: white;
 }
 
 .windowshown, .windowhidden {
@@ -56,25 +57,26 @@ button {
 
 .windowshown {
     display: block;
+    width: 80vw;
 }
 
 .windowhidden {
     display: none;
 }
 
-.frameshown, .framehidden {
+.frameshown {
     background-color: lightgray;
     width: 80vw;
     height: 35px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
-    margin: 0 auto; /* Center the frame horizontally */
+    float:center;
+    
 }
-
 .framehidden {
-    display: none;
+    background-color: lightgray;
+    width: 80vw;
+    height: 35px;
+    float:center;
+    display:none;
 }
 
 .control-box {
@@ -87,7 +89,6 @@ button {
     height: 30px;
     background-color: lightgray;
     border: none;
-    margin-left: 5px; /* Added margin for spacing */
 }
 
 #close:hover {
