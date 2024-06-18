@@ -84,10 +84,10 @@ function performSearch(query) {
             query = 'https://' + query;
         }
         googleFrame.src = query;
-    } else {
-        // Perform a Google search
-         googleFrame.src = `https://www.google.com/search?igu=1&ogs=1&q=${encodeURIComponent(query)}`;
-    }
+    } //else {
+    //     // Perform a Google search
+    //      googleFrame.src = `https://www.google.com/search?igu=1&ogs=1&q=${encodeURIComponent(query)}`;
+    // }
 
     // Display the Google frame
     googleFrame.classList.remove('windowhidden');
