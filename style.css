@@ -166,8 +166,8 @@ button {
 
 #trash + p {
     position: fixed;
-    top: 135px; /* Adjust to be below the trash icon */
-    left: 2px;
+    top: 100px; /* Adjust to be below the trash icon */
+    left: 8px;
     z-index: 10; /* Ensure it is on top of other elements */
 }
 .start-menu {
