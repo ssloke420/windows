@@ -151,10 +151,10 @@ button {
     position: absolute;
 }
 
-#setwindow {
+/* #setwindow {
     background-color: white;
     font-family: Calibri;
-}
+} */
 #trash {
     position: fixed;
     top: 5px;
