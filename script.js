@@ -86,7 +86,7 @@ function performSearch(query) {
         googleFrame.src = query;
     } else {
         // Perform a Google search
-        googleFrame.src = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+        window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
     }
 
     // Display the Google frame
