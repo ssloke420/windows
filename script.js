@@ -82,18 +82,20 @@ function performSearch(query) {
         // If it doesn't start with http or https, add https
         if (!/^https?:\/\//i.test(query)) {
             query = 'https://' + query;
+            
         }
-        googleFrame.src = query;
+    googleFrame.src = query;
+    googleFrame.classList.remove('windowhidden');
+    googleFrame.classList.add('windowshown');
+    googleFrameHeader.classList.remove('framehidden');
+    googleFrameHeader.classList.add('frameshown');
     } //else {
     //     // Perform a Google search
     //      googleFrame.src = `https://www.google.com/search?igu=1&ogs=1&q=${encodeURIComponent(query)}`;
     // }
 
     // Display the Google frame
-    googleFrame.classList.remove('windowhidden');
-    googleFrame.classList.add('windowshown');
-    googleFrameHeader.classList.remove('framehidden');
-    googleFrameHeader.classList.add('frameshown');
+
 }
 
 
