@@ -86,7 +86,7 @@ function performSearch(query) {
         googleFrame.src = query;
     } else {
         // Perform a Google search
-        window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
+         googleFrame.src = `https://www.google.com/search?igu=1&ogs=1&q=${encodeURIComponent(query)}`;
     }
 
     // Display the Google frame
