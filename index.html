@@ -138,15 +138,16 @@ if (storedPass) {
 </div>
     <!---Settings--->
 <div id="setframe" class="window">
-<div class="framehidden" id="setframeheader">
+    <div class="framehidden" id="setframeheader">
         <span class="control-box">
-        <button class="controls" onclick="toggleWindow('setwindow', 'setframeheader')"> - </button>
-        <button class="controls" onclick="fullscreen('setframe')" disabled> ❐ </button>
-        <button class="controls" id="close" onclick="toggleWindow('setwindow', 'setframeheader')"> X </button>
+            <button class="controls" onclick="toggleWindow('setwindow', 'setframeheader')"> - </button>
+            <button class="controls" onclick="fullscreen('setframe')" disabled> ❐ </button>
+            <button class="controls" id="close" onclick="toggleWindow('setwindow', 'setframeheader')"> X </button>
         </span>
+    </div>
+    <iframe src="settings.html" id="setwindow" class="windowhidden"></iframe>
 </div>
-<iframe src="settings.html" id = "setwindow" class = "windowhiden"></iframe>
-</div>
+
 <!--Terminal--->
 <div id="tframe" class="window">
 <div class="framehidden" id="tframeheader">
