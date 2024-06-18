@@ -57,6 +57,45 @@ function fullscreen(id) {
         iframe.classList.add('fullscreen');
     }
 }
+function isValidURL(str) {
+    var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+        '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+        '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+        '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+    return !!pattern.test(str);
+}
+
+function handleKeyPress(event) {
+    if (event.key === "Enter") {
+        performSearch(event.target.value);
+    }
+}
+
+function performSearch(query) {
+    const googleFrame = document.getElementById('gwindow');
+    const googleFrameHeader = document.getElementById('googleframeheader');
+    
+    // Check if the query is a valid URL
+    if (isValidURL(query)) {
+        // If it doesn't start with http or https, add https
+        if (!/^https?:\/\//i.test(query)) {
+            query = 'https://' + query;
+        }
+        googleFrame.src = query;
+    } else {
+        // Perform a Google search
+        googleFrame.src = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+    }
+
+    // Display the Google frame
+    googleFrame.classList.remove('windowhidden');
+    googleFrame.classList.add('windowshown');
+    googleFrameHeader.classList.remove('framehidden');
+    googleFrameHeader.classList.add('frameshown');
+}
+
 
 // document.addEventListener("keydown", function (event) {
 //     if (event.ctrlKey && event.key === 'l') {
