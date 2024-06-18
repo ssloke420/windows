@@ -168,7 +168,7 @@ if (storedPass) {
 </div>
 <div class="taskbar" id="taskbar">
     <img src="start.png" id="start"/>
-    <input type="text" id="search" placeholder="🔍Type here to search"/>
+    <input type="text" id="search" placeholder="🔍 Type here to search" onkeypress="handleKeyPress(event)"/>
     <button onclick="toggleWindow('gwindow', 'googleframeheader')"> <img src="chrome.png"/> </button>
     <button onclick="toggleWindow('padwindow', 'padframeheader')"><img src="notepad.png"/></button>
     <button><img src="https://logodownload.org/wp-content/uploads/2022/07/microsoft-store-logo-1.png"/></button>
