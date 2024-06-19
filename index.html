@@ -49,7 +49,7 @@ var password = document.getElementById("pass");
 var screen = document.getElementById("login");
 var tb = document.getElementById('taskbar');
 var passCode = "sproistotallyforthewin";
-
+tb.style.display = "none";
 function checkCookies() {
     let cookies = document.cookie.split(';');
     let passwordIs = false;
@@ -81,6 +81,7 @@ function setCookies() {
                 document.cookie = `password=${savedPassword}; path=/;`;
                 screen.style.display = "none";
                 password.value = "";
+                tb.style.display = "block";
                 lockComplete();
             }
         }
@@ -109,6 +110,7 @@ function lockOpen() {
 let storedPass = checkCookies();
 if (storedPass) {
     lockComplete();
+
 }
 
 </script>
