@@ -95,7 +95,6 @@ button {
     background-color: lightgray;
     width: 80vw;
     height: 35px;
-    float:center;
     z-index: 100;
     
 }
@@ -103,7 +102,6 @@ button {
     background-color: lightgray;
     width: 80vw;
     height: 35px;
-    float:center;
     display:none;
 }
 
