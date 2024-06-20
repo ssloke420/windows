@@ -2,173 +2,192 @@
 <html>
 <head>
 <meta charset="utf-8"/>
-<title>Windows OS</title>
+<title> Windows OS </title>
 <link rel="stylesheet" href="style.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-    <div id="completeWrapper">
+        <div id="completeWrapper">
         <div id="login">
             <div class="backDD">
                 <center>
                     <p id="p">Shlek Shah</p>
-                    <p id="cookie"></p>
+                        <p id="cookie"></p>
                     <input type="password" id="pass" placeholder="Enter password:" />
                 </center>
             </div>
         </div>
-    </div>
-    <style>
-        .backDD {
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            width: 60%;
-            margin-left: 20%;
-            height: 40%;
-            margin-top: 10%;
-            padding: 10px;
-            border-radius: 40px;
-        }
-        #p {
-            font-size: 30pt;
-        }
-        #login {
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            left: 0;
-            background-size: cover;
-            z-index: 999;
-            display: block;
-        }
-    </style>
-    <script>
-        var password = document.getElementById("pass");
-        var screen = document.getElementById("login");
-        var tb = document.getElementById('taskbar');
-        var passCode = "sproistotallyforthewin";
-        // tb.style.display = "none";
-
-        function checkCookies() {
-            let cookies = document.cookie.split(';');
-            let passCodeFromCookie = '';
-
-            for (let i = 0; i < cookies.length; i++) {
-                let cookie = cookies[i].trim();
-                if (cookie.startsWith("password=")) {
-                    passCodeFromCookie = cookie.substring("password=".length);
-                    break;
-                }
+        <style>
+            .backDD {
+                background: rgba(0, 0, 0, 0.5);
+                color: white;
+                width: 60%;
+                margin-left: 20%;
+                height: 40%;
+                margin-top: 10%;
+                padding: 10px;
+                border-radius: 40px;
             }
-            return passCodeFromCookie || false;
-        }
+            #p {
+                font-size: 30pt;
+            }
+            #login {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+/*                 background: url("https://cdn.wccftech.com/wp-content/uploads/2016/11/Abstract-Shapes.jpg"); */
+                background-size: cover;
+                z-index: 999;
+                /* padding: 100px; */
+                display: block;
+            }
+        </style>
+<script>
+var password = document.getElementById("pass");
+var screen = document.getElementById("login");
+var tb = document.getElementById('taskbar');
+var passCode = "sproistotallyforthewin";
+tb.style.display = "none";
+function checkCookies() {
+    let cookies = document.cookie.split(';');
+    let passwordIs = false;
+    let passCodeFromCookie = '';
 
-        function setCookies() {
-            document.getElementById("cookie").innerHTML = "Please set a password.";
-            password.removeEventListener("keypress", handlePasswordInput);
-            password.addEventListener("keypress", function (event) {
-                if (event.key === "Enter") {
-                    let savedPassword = password.value;
-                    let confirmation = confirm("Are you sure you want to save this password? " + savedPassword);
-                    if (confirmation) {
-                        document.cookie = `password=${savedPassword}; path=/;`;
-                        screen.style.display = "none";
-                        password.value = "";
-                        // tb.style.display = "block";
-                        lockComplete();
-                    }
-                }
-            }, { once: true });
+    for (let i = 0; i < cookies.length; i++) {
+        let cookie = cookies[i].trim();
+        if (cookie.startsWith("password=")) {
+            passwordIs = true;
+            passCodeFromCookie = cookie.substring("password=".length);
+            break;
         }
+    }
 
-        function lockComplete() {
-            document.getElementById("cookie").innerHTML = "";
-            password.removeEventListener("keypress", handlePasswordInput);
-            password.addEventListener("keypress", handlePasswordInput);
-        }
+    if (!passwordIs) {
+        setCookies();
+        return false;
+    }
+    return passCodeFromCookie;
+}
 
-        function handlePasswordInput(event) {
-            if (event.key === "Enter") {
-                let storedPass = checkCookies();
-                if (password.value === passCode || password.value === storedPass) {
-                    screen.style.display = "none";
-                    // tb.style.display = "block";
-                } else {
-                    document.getElementById("cookie").innerHTML = "Incorrect password. Please try again.";
-                    password.value = "";
-                }
+function setCookies() {
+    document.getElementById("cookie").innerHTML = "Please set a password.";
+    password.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            let savedPassword = password.value;
+            let confirmation = confirm("Are you sure you want to save this password? " + savedPassword);
+            if (confirmation) {
+                document.cookie = `password=${savedPassword}; path=/;`;
+                screen.style.display = "none";
+                password.value = "";
+                tb.style.display = "block";
+                lockComplete();
             }
         }
+    }); // Ensure the event listener runs only once
+}
 
-        let storedPass = checkCookies();
-        if (storedPass) {
-            lockComplete();
-        } else {
-            setCookies();
+function lockComplete() {
+    password.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            if (password.value === passCode || password.value === checkCookies()) {
+                screen.style.display = "none";
+                tb.style.display = "block";
+            } else {
+                document.getElementById("cookie").innerHTML = "Incorrect password. Please try again.";
+                password.value = "";
+            }
         }
-    </script>
-    <script src="script.js"></script>
-    <img id="trash" src="trash.png.png"/>
-    <p id="trash">Recycling Bin</p>
-    <div id="googleframe" class="window">
-        <div class="framehidden" id="googleframeheader">
-            <span class="control-box">
-                <button class="controls" onclick="toggleWindow('gwindow', 'googleframeheader')"> - </button>
-                <button class="controls" onclick="fullscreen('googleframe')"> ❐ </button>
-                <button class="controls" id="close" onclick="toggleWindow('gwindow', 'googleframeheader')"> X </button>
-            </span>
-        </div>
-        <iframe src="https://www.google.com/search?igu=1" id="gwindow" class="windowhidden"></iframe>
+    });
+}
+
+function lockOpen() {
+    screen.style.display = "block";
+    password.value = "";
+}
+
+let storedPass = checkCookies();
+if (storedPass) {
+    lockComplete();
+
+}
+
+</script>
+<script src="script.js"></script>
+<img id="trash" src="trash.png.png"/>
+<p id="trash">Recycling Bin</p>
+<div id="googleframe" class="window">
+<div class="framehidden" id="googleframeheader">
+    <span class="control-box">
+    <button class="controls" onclick="toggleWindow('gwindow', 'googleframeheader')"> - </button>
+    <button class="controls" onclick="fullscreen('googleframe')"> ❐ </button>
+    <button class="controls" id="close" onclick="toggleWindow('gwindow', 'googleframeheader')"> X </button>
+    </span>
+</div>
+<iframe src="https://www.google.com/search?igu=1" id = "gwindow" class="windowhidden"></iframe>
+</div>
+<!---Notepad-->
+<div id="padframe" class="window">
+<div class="framehidden" id="padframeheader">
+    <span class="control-box">
+        <button class="controls" onclick="toggleWindow('padwindow', 'padframeheader')"> - </button>
+        <button class="controls" onclick="fullscreen('padframe')" disabled> ❐ </button>
+        <button class="controls" id="close" onclick="toggleWindow('padwindow', 'padframeheader')"> X </button>
+    </span>
+</div>
+<textarea id="padwindow" rows="45" cols="150" class="windowhidden"></textarea>
+</div>
+    <!---Settings--->
+<div id="setframe" class="window">
+    <div class="framehidden" id="setframeheader">
+        <span class="control-box">
+            <button class="controls" onclick="toggleWindow('setwindow', 'setframeheader')"> - </button>
+            <button class="controls" onclick="fullscreen('setframe')" disabled> ❐ </button>
+            <button class="controls" id="close" onclick="toggleWindow('setwindow', 'setframeheader')"> X </button>
+        </span>
     </div>
-    <div id="padframe" class="window">
-        <div class="framehidden" id="padframeheader">
-            <span class="control-box">
-                <button class="controls" onclick="toggleWindow('padwindow', 'padframeheader')"> - </button>
-                <button class="controls" onclick="fullscreen('padframe')" disabled> ❐ </button>
-                <button class="controls" id="close" onclick="toggleWindow('padwindow', 'padframeheader')"> X </button>
-            </span>
-        </div>
-        <textarea id="padwindow" rows="45" cols="150" class="windowhidden"></textarea>
-    </div>
-    <div id="setframe" class="window">
-        <div class="framehidden" id="setframeheader">
-            <span class="control-box">
-                <button class="controls" onclick="toggleWindow('setwindow', 'setframeheader')"> - </button>
-                <button class="controls" onclick="fullscreen('setframe')" disabled> ❐ </button>
-                <button class="controls" id="close" onclick="toggleWindow('setwindow', 'setframeheader')"> X </button>
-            </span>
-        </div>
-        <iframe src="settings.html" id="setwindow" class="windowhidden"></iframe>
-    </div>
-    <div id="tframe" class="window">
-        <div class="framehidden" id="tframeheader">
-            <span class="control-box">
-                <button class="controls" onclick="toggleWindow('twindow', 'tframeheader')"> - </button>
-                <button class="controls" onclick="fullscreen('tframe')"> ❐ </button>
-                <button class="controls" id="close" onclick="toggleWindow('twindow', 'tframeheader')"> X </button>
-            </span>
-        </div>
-        <iframe src="terminal.html" id="twindow" class="windowhidden"></iframe>
-    </div>
-    <div class="taskbar" id="taskbar">
-        <img src="start.png" id="start"/>
-        <input type="text" id="search" placeholder="🔍 Type here to search" onkeypress="handleKeyPress(event)"/>
-        <button onclick="toggleWindow('gwindow', 'googleframeheader')"> <img src="chrome.png"/> </button>
-        <button onclick="toggleWindow('padwindow', 'padframeheader')"><img src="notepad.png"/></button>
-        <button><img src="https://logodownload.org/wp-content/uploads/2022/07/microsoft-store-logo-1.png"/></button>
-        <button><img src="https://vectorified.com/images/file-explorer-icon-windows-10-38.png"/></button>
-        <button><img src="mail.png"/></button>
-        <button onclick="toggleWindow('setwindow', 'setframeheader')"><img src="settings.png"/></button>
-        <button onclick="toggleWindow('twindow', 'tframeheader')"><img src="https://icon-library.com/images/command-prompt-icon/command-prompt-icon-22.jpg"/></button>
-        <div class="tray">
-            <img src="wifi.png" alt="WiFi" id="wifi-icon"/>
-            <span id="battery">100%</span>
-            <span id="time"></span>
-        </div>
-    </div>
-    <script src="drag.js"></script>
-    <script src="jquery.js"></script>
-    <script src="time.js"></script>
+    <iframe src="settings.html" id="setwindow" class="windowhidden"></iframe>
+</div>
+
+<!--Terminal--->
+<div id="tframe" class="window">
+<div class="framehidden" id="tframeheader">
+    <span class="control-box">
+    <button class="controls" onclick="toggleWindow('twindow', 'tframeheader')"> - </button>
+    <button class="controls" onclick="fullscreen('tframe')"> ❐ </button>
+    <button class="controls" id="close" onclick="toggleWindow('twindow', 'tframeheader')"> X </button>
+    </span>
+</div>
+<iframe src="terminal.html" id = "twindow" class="windowhidden"></iframe>
+</div>
+<div class="taskbar" id="taskbar">
+    <img src="start.png" id="start"/>
+    <input type="text" id="search" placeholder="🔍 Type here to search" onkeypress="handleKeyPress(event)"/>
+    <button onclick="toggleWindow('gwindow', 'googleframeheader')"> <img src="chrome.png"/> </button>
+    <button onclick="toggleWindow('padwindow', 'padframeheader')"><img src="notepad.png"/></button>
+    <button><img src="https://logodownload.org/wp-content/uploads/2022/07/microsoft-store-logo-1.png"/></button>
+    <button><img src="https://vectorified.com/images/file-explorer-icon-windows-10-38.png"/></button>
+    <button><img src="mail.png"/></button>
+    <button onclick="toggleWindow('setwindow', 'setframeheader')"><img src="settings.png"/></button>
+    <button onclick="toggleWindow('twindow', 'tframeheader')"><img src="https://icon-library.com/images/command-prompt-icon/command-prompt-icon-22.jpg"/></button>
+    <div class="tray">
+    <img src="wifi.png" alt="WiFi" id="wifi-icon"/>
+    <span id="battery">100%</span>
+    <span id="time"></span>
+<!-- <div id="startMenu" class="start-menu">
+        <ul>
+            <li onclick="openApp('chrome')">Chrome</li>
+            <li onclick="openApp('notepad')">Notepad</li>
+            <li onclick="openApp('settings')">Settings</li>
+            <li onclick="openApp('terminal')">Terminal</li>
+        </ul>
+    </div> -->
+</div>
+</div>
+<script src="drag.js"></script>
+<script src="jquery.js"></script>
+<script src="time.js"></script> <!--Finally! OMEGA TAKE THAT!--->
 </body>
+<!--  -->
 </html>
