@@ -84,6 +84,7 @@ button {
 .windowshown {
     display: block;
     width: 80vw;
+    z-index: 100;
 }
 
 .windowhidden {
@@ -95,6 +96,7 @@ button {
     width: 80vw;
     height: 35px;
     float:center;
+    z-index: 100;
     
 }
 .framehidden {
@@ -133,9 +135,10 @@ button {
     left: 0 !important;
     border: none !important;
     box-shadow: none !important;
+    z-index: 100;
 }
 
-.fullscreen #googleframeheader {
+.fullscreen [id*="frameheader"] {
     width: 100vw !important;
     top: 0 !important;
     left: 0 !important;
@@ -149,7 +152,7 @@ button {
 
 .window {
     position: absolute;
-    z-index: 100;
+
 }
 
 /* #setwindow {
